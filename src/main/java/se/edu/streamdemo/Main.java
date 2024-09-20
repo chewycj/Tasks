@@ -39,6 +39,11 @@ public class Main {
         }
     }
 
+    public static void printDataWithStreams(ArrayList<Task> tasksData) {
+        System.out.println("Printing data with streams");
+        tasksData.stream()                     // create a stream
+                .forEach(System.out::println); // terminal operator, will start lazy operation
+    }
     public static void printDeadlines(ArrayList<Task> tasksData) {
         for (Task t : tasksData) {
             if (t instanceof Deadline) {
