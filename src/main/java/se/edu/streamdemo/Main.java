@@ -53,4 +53,10 @@ public class Main {
                     .filter((t) -> t instanceof Deadline) //lambda function, for every t we are encountering
                     .forEach(System.out::println);
     }
+    public static int countDeadlinesUsingStream(ArrayList<Task> tasksData) {
+        int count = (int) tasksData.stream()
+                .filter((t) -> t instanceof Deadline) //lambda function, for every t we are encountering
+                .count(); // terminal operation; aggregate operation
+        return count;
+    }
 }
